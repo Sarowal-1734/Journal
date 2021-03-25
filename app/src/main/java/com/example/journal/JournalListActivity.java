@@ -50,7 +50,7 @@ public class JournalListActivity extends AppCompatActivity {
         journalList = new ArrayList<>();
 
         // get data from fireStore and set to the recyclerView
-        db.collection("Journal").whereEqualTo("userId", firebaseAuth.getUid())
+        db.collection("Journal")//.whereEqualTo("userId", firebaseAuth.getUid())  //to get journalList of current user
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
